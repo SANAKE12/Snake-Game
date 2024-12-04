@@ -14,7 +14,6 @@
     const showGridEl = document.getElementById("show-grid");
     const highScoreEl = document.getElementById("high-score");
     const pauseEl = document.getElementById("pause");
-    const playEl = document.getElementById("play");
 
     let score = 0;
 
@@ -238,21 +237,12 @@
 
     addEventListener("keydown", changeDir);
 
-    const PlayButton = (show) => {
-        if (!show) {
-            playEl.style.display = "none";
-        } else {
-            playEl.style.display = "block";
-        }
-    };
-
     const pauseGame = () => {
         gameActive = false;
         if (!gameActive) {
             pauseEl.removeAttribute('class');
             pauseEl.setAttribute('class', 'pause-not-active')
         }
-        if (!isGameOver()) PlayButton(true);
     };
 
     pauseEl.addEventListener("click", pauseGame);
@@ -267,6 +257,8 @@
         food.draw();
 
         if (gameActive) {
+            pauseEl.removeAttribute('class');
+            pauseEl.setAttribute('class', 'pause-active');
             updateSnakePosition();
             if (isGameOver()) {
                 drawText("Game Over!", w / 2, h / 2, "40px", "#FF3131");
