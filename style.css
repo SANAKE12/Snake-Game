@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    overflow: hidden;
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 146px;
+    padding: 2rem 15% 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.logo {
+    font-size: 1.8em;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: "Poppins", sans-serif;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: url(/img/25.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    margin: 0;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+@keyframes animate-play {
+    0% {
+        text-shadow: 0 0 10px var(--main-color);
+    }
+
+    50% {
+        text-shadow: 0 0 20px var(--main-color);
+    }
+
+    100% {
+        text-shadow: 0 0 10px var(--main-color);
+    }
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+}
+
+#control-head {
+    text-align: center;
+    font-family: "Press Start 2P", cursive;
+}
+
+button {
+    background: transparent;
+    color: var(--text-color);
+    border-radius: 25px;
+    width: 120px;
+    padding: 12px;
+    margin-top: 18px;
+    box-shadow: 0 0 3px var(--main-color);
+    font-size: 0.8em;
+    font-weight: bold;
+    transition: box-shadow 0.3s;
+    text-shadow: 0 0 8px var(--main-color);
+    text-transform: uppercase;
+}
+
+button:hover {
+    box-shadow: 0 0 12px var(--main-color);
+    color: var(--main-color);
+}
+
+.pause-not-active {
+    background: rgba(239, 239, 240, 0.4);
+    box-shadow: none;
+    color: var(--main-color);
+    border-radius: 25px;
+    width: 120px;
+    padding: 12px;
+    margin-top: 18px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-shadow: 0 0 8px var(--main-color);
+    text-transform: uppercase;
+}
+
+#canvas {
+    display: block;
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+    width: 80vw;
+    max-width: 35%;
+    height: 80vw;
+    max-height: 70%;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#score {
+    font-size: larger;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    border: 1px solid var(--text-color);
+    padding: 12px;
+    border-radius: 50px;
+    box-shadow: inset 0 0 8px var(--main-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+#control-keys {
+    color: var(--text-color);
+    font-size: 1.2em;
+    line-height: 48px;
+    box-shadow: 0 0 8px var(--main-color);
+    text-align: center;
+}
+
+#high-score {
+    color: yellow;
+    font-family: "Press Start 2P", cursive;
+}
+
+#channel {
+    position: absolute;
+    left: 0;
+    margin: 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-transform: uppercase;
+    font-size: 3.2em;
+    font-family: "Press Start 2P", cursive;
+    letter-spacing: 0.4em;
+    color: var(--text-color);
+    text-shadow: 0 0 12px var(--main-color);
+    border: 5px solid var(--main-color);
+    padding: 14px;
+}
+
+/* Breakpoint */
+@media(max-width:1536px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+@media(max-width:1280px) {
+    html {
+        font-size: 55%;
+    }
+}
